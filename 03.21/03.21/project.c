@@ -7,34 +7,11 @@ int main()
 	int count=0;
 	for (int i = 1; i <= 100; i++)
 	{
-		if (i < 10)
-		{
-			a1 = i % 10;
-			if (9 == a1)
-			{
-				printf("%d ", i);
-				count++;
-			}
-		}
-		if (i>10)
-		{
-			a1 = i % 10;
-			a2 = i / 10;
-			if (9 != a2)
-			{
-				if (9 == a1)
-				{
-					printf("%d ", i);
-					count++;
-				}
-			}
-			if (9 == a2)
-			{
-				printf("%d ", i);
-				count++;
-			}
-		}	
+		if (9 == i % 10)
+			count++;
+		if (9 == i / 10)
+			count++;
 	}
-	printf("\n%d\n", count);
+	printf("%d\n", count);
 	return 0;
 }
