@@ -1,20 +1,25 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
+#include<string.h>
 
-void reverse_string(char * string)
+void reverse_string(char *str)
 {
-	if (*string != '\0')
+	int left = 0;
+	int right = strlen(str) - 1;
+	while (left <= right)
 	{
-		reverse_string(++string);
-		printf("%c ", *(string-1));
+		char ptr = str[left];
+		str[left] = str[right];
+		str[right] = ptr;
+		left++;
+		right--;
 	}
 }
 
 int main()
 {
-	char arr[100] = { 0 };
-	printf("ÇëÊäÈëÒ»×Ö·û´®:");
-	scanf("%s", arr);
+	char arr[] = "hello";
 	reverse_string(arr);
+	printf("%s", arr);
 	return 0;
 }
