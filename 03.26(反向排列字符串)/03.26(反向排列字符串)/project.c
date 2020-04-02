@@ -8,9 +8,9 @@ void reverse_string(char *str)
 	int right = strlen(str) - 1;
 	while (left <= right)
 	{
-		char ptr = str[left];
-		str[left] = str[right];
-		str[right] = ptr;
+		char ptr = *(str+left);
+		*(str + left) = *(str + right);
+		*(str + right) = ptr;
 		left++;
 		right--;
 	}
@@ -18,8 +18,10 @@ void reverse_string(char *str)
 
 int main()
 {
-	char arr[] = "hello";
+	char arr[100] = { 0 };
+	gets(arr);
 	reverse_string(arr);
-	printf("%s", arr);
+	puts(arr);
 	return 0;
 }
+
